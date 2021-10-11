@@ -1,0 +1,46 @@
+#include <iostream>
+using namespace std;
+
+class Base{
+  public:
+  int b;
+  void display()
+  {
+    cout<<"Inside the base display"<<endl;
+  }
+  virtual void show()
+  {
+    cout<<"show() Base class\n";
+  }
+
+};
+
+class Derived :public Base{
+  public:
+  int d;
+  void display()
+  {
+    cout<<"Inside the deroved display"<<endl;
+  }
+  void show()
+  {
+    cout<<"show()Derivedclass\n";
+  }
+};
+int main() {
+  Base bobj;
+  Derived dobj;
+  
+  Base *bptr;//pointer of base class
+  bptr = &bobj;//base class object
+  cout<<"Base class object is reference in the base pointer"<<endl;
+  bptr->display();
+  bptr->show();
+
+  bptr = &dobj;//base class object
+  cout<<"derived class object is reference in the base pointer"<<endl;
+  bptr->display();
+  bptr->show();
+ 
+  return 0;
+}
