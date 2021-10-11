@@ -1,0 +1,24 @@
+/*
+    Objective: To take an integer named quantity and a float named unit price from the user and to print them each on a separate line.
+
+    Author: Sandhya V
+    Created On: October 02, 2021
+    Modified On:
+    Dependencies:
+*/
+//the preprocessor segment including the required files during the compilation
+#include <iostream>
+//additional namespaces requiured
+using namespace std;
+//Main Driving code
+int main() 
+{
+  //user instructions for input
+  int quantity=0;//The size of the int type is 4 bytes
+  float unit_price=0;//The size of the int type is 4 bytes
+cout<<"Please enter quantity and unit price"<<endl;
+cin>>quantity>>unit_price;
+cout<<"\nThe quantity is: "<<quantity;// prints user inputed integer
+cout<<"\nThe unit price is: "<<unit_price;// prints user inputed floating point number
+return 0;
+}
