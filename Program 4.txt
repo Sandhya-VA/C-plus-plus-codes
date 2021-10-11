@@ -1,0 +1,41 @@
+/*
+    Objective: To read user inputed 10 integers and prints the first and the last on one line the second and the 9th on the next line the 3rd and the 7th on the next line and so forth.
+    Author: Sandhya V
+    Created On: October 02, 2021
+    Modified On:
+    Dependencies:
+*/
+//the preprocessor segment including the required files during the compilation
+#include <iostream>
+//additional namespaces requiured
+using namespace std;
+//Main Driving code
+int main() 
+{
+  //user instructions for input
+ int Tv_price=400, Vcr_price=220, CDplayer_price=300, TapeRecorder_price=150, Tv_quantity=0,Vcr_quantity=0, CDplayer_quantity=0, TapeRecorder_quantity=0,Remotecontroller_quantity=0; float Remotecontroller_price=35.2;
+cout<<"Welcome to Shopping mart!"<<endl;
+cout<<"\n\nPlease enter the quantity of Tv purchased"<<endl;
+cin>>Tv_quantity;
+cout<<"Please enter the quantity of Vcr purchased"<<endl;
+cin>>Vcr_quantity;
+cout<<"Please enter the quantity of CD player purchased"<<endl;
+cin>>CDplayer_quantity;
+cout<<"Please enter the quantity of Tape Recorder purchased"<<endl;
+cin>>TapeRecorder_quantity;
+cout<<"Please enter the quantity of Remotecontroller purchased"<<endl;
+cin>>Remotecontroller_quantity;
+cout<<"\nHey, here is your bill"<<endl;
+cout<<"\n\n  \t\t\t\t\t SHOPPING MART"<<endl;
+cout<<"\nSlno"<<" Items\t\t\t"<<"Quantity"<<"  Price(1 piece)"<<"  Total price"<<endl;
+cout<<"-----------------------------------------------------------"<<endl;
+cout<<"1\t"<<" TV\t\t\t\t\t"<<Tv_quantity<<"\t\t"<<Tv_price<<"\t\t\t\t"<<Tv_price*Tv_quantity<<endl;
+cout<<"2\t"<<" VCR\t\t\t\t"<<Vcr_quantity<<"\t\t"<<Vcr_price<<"\t\t\t\t"<<Vcr_price*Vcr_quantity<<endl;
+cout<<"3\t"<<" CD Player\t\t\t"<<CDplayer_quantity<<"\t\t"<<CDplayer_price<<"\t\t\t\t"<<CDplayer_price*CDplayer_quantity<<endl;
+cout<<"4\t"<<" Tape Recorder\t\t"<<TapeRecorder_quantity<<"\t\t"<<TapeRecorder_price<<"\t\t\t\t"<<TapeRecorder_price*TapeRecorder_quantity<<endl;
+cout<<"5\t"<<" Remote Controller\t"<<Remotecontroller_quantity<<"\t\t"<<Remotecontroller_price<<"\t\t\t"<<Remotecontroller_price*Remotecontroller_quantity<<endl;
+cout<<"-----------------------------------------------------------"<<endl;
+cout<<"The Total price is                              "<<Tv_price*Tv_quantity+Vcr_price*Vcr_quantity+CDplayer_price*CDplayer_quantity+TapeRecorder_price*TapeRecorder_quantity+Remotecontroller_price*Remotecontroller_quantity;
+cout<<"\n\nThank you! Visit again"<<endl;
+return 0;
+}
