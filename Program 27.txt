@@ -1,0 +1,80 @@
+/* Objective: To design a class batsman where it can be used for maintaining the information about the player. The details are
+Name, innings played, not outs, runs. Using these details we are calculating the batting
+average(runs/(innings -not out)), user are able to add the data by themselves for number of batman’s that they will mention during the runtime and along with that the data is displayed on console on demand
+
+Author: Sandhya V
+Created On: 09/10/2021
+Modified on:
+Dependencies: None
+*/
+//pre-processor directives
+#include <iostream>
+//Additional namespaces required
+using namespace std;
+//class batsman is created
+class batsman
+{
+  string name;
+  int inningsPlayed;
+  int notOut;
+  int totalRun;
+  int avgRun;
+  
+  void averageRun()
+  {
+    //formula to find the average run
+    avgRun=(totalRun)/(inningsPlayed-notOut);
+  }
+public:
+  void inputData()
+  {
+    int choice;
+    while(1)
+  {
+    cout<<"Enter the name of batsman: ";
+    cin>>name;
+    cout<<"Enter the total number of innings played: ";
+    cin>>inningsPlayed;
+    cout<<"Enter the not-out innings of batsman: ";
+    cin>>notOut;
+    cout<<"Enter the total number of runs scored by batsman: ";
+    cin>>totalRun;
+    display();
+    cout<<"-------------------------------------------"<<endl;
+     cout<<"\n"<<endl; 
+    cout<<"Do you want to check the details of another batsman?\nEnter 1 to continue or 0(zero) to exit: ";
+    cin>>choice;
+    if(choice!=1)
+    {
+      break;
+    }
+    else
+    {
+      continue;
+    }
+  }
+}
+ 
+void display()
+{
+   cout<<"\n"<<endl;
+  cout<<"-------------------------------------------"<<endl;
+  
+  averageRun();
+  cout<<"Entered details are"<<endl;
+  cout<<"Batsman name: "<<name<<endl;
+  cout<<"Innings played:"<<inningsPlayed<<endl;
+  cout<<"Not out innings: "<<notOut<<endl;
+  cout<<"Total number of run: "<<totalRun<<endl;
+  cout<<"Average run of batsman: "<<avgRun<<endl;
+}
+
+};
+//Main Driver Code
+int main()
+{
+  //Function calling
+  batsman choice;
+  choice.inputData();
+  return 0;
+}
