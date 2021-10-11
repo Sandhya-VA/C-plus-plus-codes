@@ -1,0 +1,14 @@
+#include <iostream>
+#include<fstream>
+using namespace std;
+int main() {
+  ofstream Hellofile("Hello.txt");
+ Hellofile<<"Hi, there";
+  Hellofile.close();
+  ifstream readHellofile("Hello.txt");
+  char info[50];
+  readHellofile.getline(info,50);
+  cout<<info;
+  readHellofile.close();
+  return 0;
+}
