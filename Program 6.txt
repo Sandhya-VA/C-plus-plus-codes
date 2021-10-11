@@ -1,0 +1,69 @@
+/*objective:To take number greater than 5 as user input and to print number in decrement fashion, if user inputed number is less than 5 the programs asks user to re-enter the number.
+Author: Sandhya V
+Created On: 04/10/2021
+Modified On:
+Dependencies:None
+*/
+//the preprocessor segment including the required files during the compilation
+#include <iostream>
+//additional namespaces required
+using namespace std;
+//Main Driver Code
+int main() {
+  //User input instructions
+  int number;
+  cout<<"Using for loop"<<endl;
+  cout<<"\n\nPlease enter number"<<endl;
+ label:  cin>>number;
+  if(number>=5)
+  {
+   for(int count=number;count>0;count--)
+    {
+      cout<<count<<endl;
+    }
+  }
+  else{
+     cout<<"\n\nPlease input value greater than 5"<<endl;
+     goto label;
+  }
+  cout<<"\n\nUsing while loop"<<endl;
+  cout<<"\n\nPlease enter number"<<endl;
+ label1: cin>>number;
+  while(number>0)
+  {
+    if(number>=5)
+  {
+    for(int count=number;count>0;count--)
+    {
+      cout<<count<<endl;
+    }
+  }
+    else{
+     cout<<"\n\nPlease input value greater than 5"<<endl;
+     goto label1;
+     break;
+    }
+    break;
+  }
+  cout<<"\n\nUsing do while loop"<<endl;
+  cout<<"\n\nPlease enter number"<<endl;
+ label2: cin>>number;
+  do
+  {
+    if(number>=5)
+  {
+    for(int count=number;count>0;count--)
+    {
+      cout<<count<<endl;
+    }
+    break;
+  }
+   else{
+     cout<<"\n\nPlease input value greater than 5"<<endl;
+     goto label2;
+  }
+
+  }while(number>=5);
+
+return 0;
+}
