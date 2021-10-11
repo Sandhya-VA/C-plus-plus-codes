@@ -1,0 +1,27 @@
+/*objective: To check whether user inputed number is even or odd using inline funcion concept.
+Author: Sandhya V
+Created On: 04/10/2021
+Modified On:
+Dependencies:None
+*/
+//the preprocessor segment including the required files during the compilation
+#include <iostream>
+//additional namespaces required
+using namespace std;
+//inline function evenorodd 
+inline int evenorodd(int number)
+{
+  if(number%2==0)
+  {
+    cout<<"Hey, you entered an even number";
+  }
+  else {
+    cout<<"You entered odd number";
+  }
+  return 0;
+}
+//Main Driver Code
+int main() {
+  //calling evenorodd function for number 6
+  cout <<evenorodd(9);
+}
