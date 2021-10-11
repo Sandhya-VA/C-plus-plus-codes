@@ -1,0 +1,45 @@
+/*objective: Pointers to members concept.
+Author: Sandhya V
+Created On: 04/10/2021
+Modified On:
+Dependencies:None
+*/
+
+//the preprocessor segment including the required files during the compilation
+#include <iostream>
+//additional namespaces required
+using namespace std;
+class test
+{
+  int var;//private variable
+  public:
+  // Constructor definition
+  test(int v) {
+    var=v;
+  } 
+  void printvar() {
+    cout<<"var:"<<var<<"\n";
+  }
+  void inc()
+  {
+    var++;
+  }
+};
+//Main Driver Code
+int main() {
+  test t(5);
+  cout<<"Print using object>>\n";
+  t.printvar();
+
+  test *tptr;// Declare pointer to a class.
+  tptr=&t;// Save the address of the object
+
+  cout<<"value at pointer:"<<tptr<<"\n";
+  cout<<"Print using object pointer>>\n";
+  tptr->printvar(); //Now try to access a member using member access operator
+  tptr->inc();//
+  cout<<"Print after increment:\n";
+
+  tptr->printvar();//
+  return 0;
+}
