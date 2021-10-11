@@ -1,0 +1,55 @@
+/*objective: To perform addition, subtraction, multiplication, division, modulus operation using pointers to function concept.
+Author: Sandhya V
+Created On: 05/10/2021
+Modified On:
+Dependencies:None
+*/
+//the preprocessor segment including the required files during the compilation
+#include <iostream>
+//additional namespaces required
+using namespace std;
+//functions to be called
+int add(int a, int b)
+{
+   return a+b;
+}
+
+int sub(int a, int b)
+{
+   return a-b;
+}
+
+int mul(int a, int b)
+{
+   return a*b;
+}
+
+int division(int a, int b)
+{
+   return a/b;
+}
+
+int mod(int a, int b)
+{
+   return a%b;
+}
+
+int operation(int x,int y,int(*function)(int,int))
+{
+  int g;
+  g=(function)(x,y);
+  return g;
+}
+
+//Main Driver Code
+int main() {
+  //variable declaration
+  int number1=20, number2=10;
+  cout<<"Addition: "<<operation(number1,number2,add);
+  cout<<"\nSubtraction: "<<operation(number1,number2,sub);
+  cout<<"\nMultiplication: "<<operation(number1,number2,mul);
+  cout<<"\nDivision: "<<operation(number1,number2,division);
+  cout<<"\nMod: "<<operation(number1,number2,mod);
+ 
+  return 0;
+}
