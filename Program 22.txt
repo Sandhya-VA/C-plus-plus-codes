@@ -1,0 +1,51 @@
+/*
+  Objective: To implement Assignment operator overloading concept.
+  Author: Sandhya V
+  Created On: 06/10/21
+  Modified On:
+  Dependencies:None
+*/
+//preprocessor directives
+#include <iostream>
+//additional namespaces required
+using namespace std;
+//class creation
+class Distance
+{
+  //private variables
+  int feet;
+  int inches;
+  public:
+  Distance()
+  {
+    feet=0;
+    inches=0;
+  }
+  Distance(int f, int i)
+  {
+    feet=f;
+    inches=i;
+  }
+  void operator=(const Distance &D)
+  {
+    feet = D.feet;
+    inches = D.inches;
+  }
+void displayDistance()
+{
+  cout<<feet<<" feets "<<inches<<" inches"<<endl;
+}
+};
+//Main driver code
+int main() 
+{
+ Distance D1(10,10),D2(10,10);
+ cout<<"First Distance: "<<endl;
+ D1.displayDistance();
+ cout<<"\n\nSecond distance: "<<endl;
+ D2.displayDistance();
+ D1=D2;
+ cout<<"\n\nFirst Distance"<<endl;
+ D1.displayDistance();
+ return 0;
+}
