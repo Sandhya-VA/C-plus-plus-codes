@@ -1,0 +1,105 @@
+/*Objective: To design a class to store the information about persons(name, date of birth), based on this information we are calculating the age of all the persons in the group. and displaying them as the 
+-age of all the persons
+-younger one
+-Elder one.
+
+Author: Sandhya V
+Created On: 10/10/2021
+Modified on:
+Dependencies: None
+*/
+
+//pre-processor directives
+#include <iostream>
+#include<string.h>
+//additional namespaces required
+using namespace std;
+//class person is created
+class person
+{
+  
+  public:
+  char name[50];
+  int age;
+  int pd,pm,py,bd,bm,by;
+  int d, m, y;
+
+  void getdata()
+  {
+    cout<<"\nEnter the name: ";
+    cin>>name;
+  }
+//calculating the age
+  void findage()
+  {
+  int md[12] = { 31,28,31,30,31,30,31,31,30,31,30,31 };
+    cout<<"Enter the present date: ";
+    cin>>pd>>pm>>py;
+    cout<<"Enter the date of birth: ";
+    cin>>bd>>bm>>by;
+  
+  y = py - by;
+  if (pm < bm)
+  {
+    y--;
+    m = 12 - (bm - pm);       
+  }
+  else
+  {m = pm - bm;}
+  if (pd < bd)
+  {
+    m--;
+    d = md[pm - 1] - (bd - pd);
+  }
+  else
+  {d = pd - bd;}
+  cout << "The age is : \n";
+  cout<< y << " years " << m << " months " << d << " days"<<endl;
+}
+
+};
+
+//Main Driver Code
+int main() {
+  int n,i;
+  char l[50]="";
+  char m[50]="";
+  cout<<"Enter the person count: ";
+  cin>>n;
+  person p[n];
+
+  for(int i=0;i<n;i++){
+  p[i].getdata();
+  p[i].findage();
+
+}
+//to find the elderone
+double max=p[0].bm+p[0].by+p[0].bd;
+for(i=0;i<n;i++){
+  double x;
+  x = (p[i].bm ) + (p[i].by ) + (p[i].bd);
+  if(x<=max){
+    max=x;
+    strcpy(l,p[i].name);
+  }
+  else{
+    break;
+  }
+}
+cout<<"Younger one :"<<l;
+//to find the younger one
+double min=p[0].bm+p[0].by+p[0].bd;
+for(i=0;i<n;i++){
+  double x;
+  x = (p[i].bm ) + (p[i].by ) + (p[i].bd);
+  if(x>=min){
+    min=x;
+    strcpy(m,p[i].name);
+  }
+  else{
+    break;
+  }
+}
+cout<<"\nElder one :"<<m;
+
+}
