@@ -1,0 +1,86 @@
+/*Objective: Program to design a class student where user inputs the details about the academics, and those records are maintained and the same will be displayed. The user can enter his desired number of student count.
+
+  Author: Sandhya V
+  Created On: 09/10/2021
+  Modified On:
+  Dependencies: None
+*/
+//pre-processor directives
+#include <iostream>
+#include<cstring>
+//Additional namespaces required
+using namespace std;
+//class student is created
+class student
+{
+private:
+//declaration of private member variables
+ int Registration_number;
+ string student_name;
+ int  subject_marks[3];//(Physics, Chemistry, Biology)
+ int total_marks;
+
+void calculatetotal()
+{
+  int i,m=0;
+  for(i=0;i<3;i++)
+  {
+    m+=subject_marks[i];
+  }
+   total_marks=m;
+}
+
+public:
+//to take input from user
+void Takedata()
+{
+  int i,a;
+  cout<<"Enter your name:";
+  cin>>student_name;
+  cout<<"Enter Registration number:";
+  cin>>Registration_number;
+  cout<<"Enter marks of Physics, Chemistry & Biology: ";
+  //adding all subjects
+  for(i=0;i<3;i++)
+  {
+   cin>>subject_marks[i];
+  }
+   
+}
+//displaying user data
+void Showdata()
+{
+  int i;
+  //calling calculatetotal function to display total marks
+  calculatetotal();
+  cout<<"\n"<<endl;
+  string m[]={"Physics: ","Chemistry: ","Biology: "};
+  cout<<"Student name: "<<student_name<<"\n";
+  cout<<"Registration_number:  "<<Registration_number<<"\n";
+  cout<<"Marks for 3 subjects"<<endl;
+   for(i=0;i<3;i++)
+   {
+     cout<<m[i]<<subject_marks[i]<<"\n";
+   }
+   cout<<"Total marks - "<<total_marks<<endl;
+}
+};
+//Main Driver Code
+int main() 
+{
+   int i,n=1,m,k;
+   //input number of student details required
+   cout<<"\n"<<endl;
+   cout<<"Enter number of Students: ";
+   cin>>m;
+   cout<<"\n"<<endl;
+   student stud[m];
+   cout<<"DETAILS OF THE STUDENTS:\n";
+   //calling the student class the number of student details required
+   for(int i=0;i<m;i++)
+   {
+     stud[i].Takedata();
+     stud[i].Showdata();
+     cout<<"---------------------"<<endl;
+   }
+}
