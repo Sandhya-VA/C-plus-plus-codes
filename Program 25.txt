@@ -1,0 +1,89 @@
+#include<iostream>
+#include<fstream>
+using namespace std;
+int count, ch, choice;
+// define a class to store book information
+class Book
+{
+   int price;
+   char name[30];
+   char author[30];
+   char publication[40];
+public:
+   Book() { }
+   void getData(); // get book information from user
+   void displayData(); // display data
+};
+
+void Book :: getData() {
+   
+   cin.ignore(); // ignore the newline char inserted when you press enter
+   cout << "\nEnter Name :: ";
+   cin.getline(name, 30);
+   cout << "\nEnter Author :: ";
+   cin.getline(author, 30);
+   cout << "\nEnter Publication :: ";
+   cin.getline(publication, 30);
+   cout << "\nEnter Price. :: ";
+   cin >> price;
+   
+}
+
+void Book :: displayData() {
+  
+   cout << "\nName :: " << name << endl;
+   cout << "\nAuthor :: " << author << endl;
+    cout << "\nprice. :: " << price << endl;
+    cout << "\npublication. :: " << publication << endl;
+}
+
+int main()
+{
+    int i;
+   Book b[10]; 
+   fstream file;
+ 
+
+   file.open("Bookinfo", ios :: out); // open file for writing
+    //cout << "\nWriting book information to the file :- " << endl;
+    cout << "\nEnter book Details to the File :- " << endl;
+    cout<<"Please enter number of books"<<endl;
+    cin>>count;
+
+   for (i = 1; i <=count; i++)
+    {
+      b[i].getData();
+      // write the object to a file
+      file.write((char *)&b[i], sizeof(b[i]));
+    }
+
+   file.close(); // close the file
+
+   file.open("Bookinfo", ios :: in); // open file for reading
+   cout << "\nReading book information to the file :- " << endl;
+
+   for (i = 1; i <=count; i++)
+    {
+      // read an object from a file
+      file.read((char *)&b[i], sizeof(b[i]));
+      b[i].displayData();
+    }
+  cout<<"Do you want to continue(1-yes, 0-no)"<<endl;
+  cin>>ch;
+  if (ch==1){
+   cout << "\nEnter book Details to the File :- " << endl;
+    cout<<"Please enter number of books"<<endl;
+    cin>>count; 
+     for (i = 1; i <=count; i++)
+    {
+      b[i].getData();
+      // write the object to a file
+      file.write((char *)&b[i], sizeof(b[i]));
+    }
+  }
+
+   file.close(); // close the file
+   
+
+   return 0;
+}
