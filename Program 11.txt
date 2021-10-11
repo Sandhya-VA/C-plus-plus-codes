@@ -1,0 +1,20 @@
+/*objective:To access the variable value and address using poiners concept. 
+Author: Sandhya V
+Created On: 05/10/2021
+Modified On:
+Dependencies:None
+*/
+//the preprocessor segment including the required files during the compilation
+#include <iostream>
+#include <iostream>
+using namespace std;
+int main() {
+ int var=5;
+ char alpha='A';
+ void *ptr;
+ ptr=&var;
+ cout<<((int*)ptr)<<"\n";
+ ptr=&alpha;
+ cout<<((char*) ptr)<<"\n";
+return 0;
+}
