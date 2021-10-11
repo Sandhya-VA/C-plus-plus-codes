@@ -1,0 +1,108 @@
+/*objective: To design a class to represent a bank account, where following details can be maintained: Depositor name, account
+number(you may define any starting number), type of account, balance amount in the account. Also, the following
+set of operations/actions should be provided: assign initial balance, deposit an amount, withdraw amount(make sure
+you check the balance), and display name & balance on demand.
+Author: Sandhya V
+Created On: 05/10/2021
+Modified On:
+Dependencies:None
+*/
+//the preprocessor segment including the required files during the compilation
+#include<iostream>
+#include<stdio.h>
+#include<string.h>
+//additional namespaces required
+using namespace std;
+class Bank
+{
+ 
+  char name[100], acctype[100], acno[20];
+  float bal;  
+  public:
+  void get(char *name_,char*acc_no,char *acc_type,int balance) 
+        {
+          strcpy(acno,acc_no);
+          strcpy(name, name_);
+          strcpy(acctype, acc_type);
+          bal=balance;
+        }
+        void deposit();
+        void withdraw();
+        void display();
+};
+void Bank::deposit()   //depositing an amount
+{
+  
+  int deposit_amt;
+  //cout<<"\n Enter Deposit Amount = ";
+  cin>>deposit_amt;
+  bal+=deposit_amt;
+}
+void Bank::withdraw()  //withdrawing an amount
+{
+  int withdraw_amt;
+  //cout<<"\n Enter Withdraw Amount = ";
+  cin>>withdraw_amt;
+  if(withdraw_amt>bal)
+    cout<<"\n You don't have sufficient balance to withdraw";
+    bal-=withdraw_amt;
+}
+void Bank::display()  //displaying the details
+{
+ cout<<"-----------------------------------------------------------"<<endl;
+  cout<<"\n Accout No. : "<<acno;
+  cout<<"\n Name : "<<name;
+  cout<<"\n Account Type : "<<acctype;
+  cout<<"\n Balance : "<<bal;  
+}
+//Main Driver Code
+int main()
+{
+  int choice, amount, a;
+  char name[20],acc_no[20], acc_type[20];
+  float balance;
+  Bank b; //object is created for class Bank
+  cout<<"\t\t\t\t\tWelcome to bank"<<endl;
+  cout<<"----------------------------------------------------------"<<endl;
+  cout<<"\n Please enter your details to proceed further: \n";
+  cout<<"\n Accout Number: ";
+  cin>>acc_no;
+  cout<<"\n Name : ";
+  cin>>name;
+  cout<<"\n Account Type : ";
+  cin>>acc_type;
+  cout<<"\n Balance : ";
+  cin>>balance;
+  b.get(acc_no, name, acc_type, balance);  
+
+  do{
+  cout<<"-------------------------"<<endl;
+  cout<<"\n\nPlease enter your choice\n1:Withdraw\n2:Deposit\n3:Display\n"<<endl;
+  cin>>choice;
+
+  switch(choice)
+  {
+
+    case 1:cout<<"enter the amount to withdraw";
+    b.withdraw();
+    break;
+
+    case 2:cout<<"enter the amount to deposit:";
+    b.deposit();
+    break;
+
+    case 3:
+    b.display();
+    break;
+    
+    default:cout<<"invalid"<<endl;
+    cout<<"-------------------------";
+  
+  }
+  
+  cout<<"\nDo you want to continue:(Yes-1 or No-0)"<<endl;
+        cin>>a;
+        }while(a);
+        cout<<"\n\nThanks for using bank!\nVisit again"<<endl;
+        return 0;
+}
