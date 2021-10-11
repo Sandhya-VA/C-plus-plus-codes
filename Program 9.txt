@@ -1,0 +1,34 @@
+/*objective: To implement multiplication operation  using inline concept.
+Author: Sandhya V
+Created On: 04/10/2021
+Modified On:
+Dependencies:None
+*/
+//the preprocessor segment including the required files during the compilation
+#include <iostream>
+//additional namespaces required
+using namespace std;
+//overloaded function definition for the multiplication
+inline float multi(float fno, float sno = 10)//default argunmentsr
+{
+  cout<<"\nfloat call\n";
+  return fno * sno;
+}
+inline double multi(double fno, double sno)
+{
+  cout<<"\ndouble call\n";
+  return fno* sno;
+}
+
+//Main Driver code
+int main()
+{
+  //Declaring variables
+  float first = 11.36;
+  float second = 90.64;
+  //Function calling
+  cout<<multi(first,second);
+  cout<<"Explicit Literal Value calls";
+  cout<<multi(25.2,63.1);
+  return 0;
+}
