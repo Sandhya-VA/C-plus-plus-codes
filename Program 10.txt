@@ -1,0 +1,37 @@
+/*objective: Using function template we are performing multiplication operation.
+Author: Sandhya V
+Created On: 04/10/2021
+Modified On:
+Dependencies:None
+*/
+//the preprocessor segment including the required files during the compilation
+#include <iostream>
+//this is the template parameter declaration
+template<class Mul>
+ Mul mul(Mul num1,Mul num2 )// this is the function template definition for mul<Mul>
+ {
+   Mul result;
+   result=num1*num2;
+   return result;
+ }
+ //Main driver code
+int main() {
+  //User input instructions
+  int i,j;
+  std::cout<<"Hey, enter 2 numbers"<<std::endl;
+  std::cin>>i;
+  std::cin>>j;
+  int k;
+  double f,g,h;
+  std::cout<<"Hey, enter 2 numbers"<<std::endl;
+  std::cin>>f;
+  std::cin>>g;
+  // calling with int parameters
+  k=mul<int>(i,j);
+  // calling with double parameters
+  h=mul<double>(f,g);
+  //output statements
+  std::cout<<k<<'\n';
+  std::cout<<h<<'\n';
+  return 0;
+}
