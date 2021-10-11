@@ -1,0 +1,143 @@
+/*objective:A book  shop maintains the inventory of books that are being sold at the shop the list includes details such as author, title, price, publisher and stock positions. Whenever a customer wants a book, the salesperson input see title and author and the system searches the list and displays whether it is a valid or not  able. If it is not, an appropriate message is displayed. If it is, then system displays the book details and requests for the number of copies required. If the required copies are available, the total cost of the requested copies is displayed; otherwise the message reqd copies not in stock is displayed.
+Author: Sandhya V
+Created On: 02/10/2021
+Modified On:
+Dependencies:None
+*/
+//the preprocessor segment including the required files during the compilation
+#include <iostream>
+#include<string>
+//additional namespaces required
+using namespace std;
+//Main Driver Code
+int main()
+{
+//User input instructions
+int c,copies,stock1=10,stock2=5,stock3=3,stock4=5,stock5=5,total;
+//publisher of the book list
+const char *publisher[5]={"Addison Wesley","O Reilly Media","Sams Publication","For_Dummies","McGraw Hill Education"};
+//author of the book list
+const char *author[5]={"Stanley B","Andrew Koenig","Siddhartha Rao","Bjarne Stroustrup","Herbert Schildt"};
+//title of the book list
+const char *name[5]={"C primer 5th edition","C++ Pocket Reference 1st Edition","C++ in One Hour a Day","C++ All in One 3rd Edition","C++ The Complete Reference Fourth Edition"};
+cout<<"-----------------------------------------------------------"<<endl;
+cout<<"\t\t\t\tWelcome to book store"<<endl;
+cout<<"\n\nPlease enter your choice";
+cout << "\n1.C primer 5th edition  \n2.C++ Pocket Reference 1st Edition\n3.C++ in One Hour a Day\n4:C++ All in One 3rd Edition\n5:C++ The Complete Reference Fourth Edition\n";
+cin>>c;//to read input choice from the user
+switch(c)//cases to provide different book information
+{
+  case 1:
+  {
+    cout<<"Entered book is available\n";
+    cout<<"Publisher is Addison Wesley\n";
+    cout<<"\nFor 1 copy the price is :999 Rs only";
+    cout<<"\n\nEnter number of copies\n";
+    cin>>copies;
+    if(copies<=stock1)
+    {
+      total=copies*999;
+      cout<<"\ntotal cost is :"<<total;
+      
+    }
+    else
+    {
+      cout<<"\nOut of stock";
+      cout<<"\nOnly 10 copies are available"; 
+      break;  
+    } 
+    goto Label; 
+    break;      
+  }
+  case 2:
+  {
+    cout<<"\nIt is Available";
+    cout<<"\nPublisher is O Reilly Media ";
+    cout<<"\nFor 1 copy the price is :1499 Rs only";
+    cout<<"\nEnter number of copies\n";
+    cin>>copies;
+    if(copies<=stock2)
+    {
+      total=copies*1499;
+      cout<<"\ntotal cost is :"<<total;
+    }
+    else
+    {
+      cout<<"\nOut of stock";
+      cout<<"\nOnly 5 copies are available";
+    }
+    goto Label; 
+    break;
+  }
+  case 3:
+  {
+    cout<<"\nIt is Available";
+    cout<<"\nPublisher is Sams Publication";
+    cout<<"\nFor 1 copy the price is :1999 Rs only";
+    cout<<"\nEnter number of copies\n";
+    cin>>copies;
+    if(copies<=stock3)
+    {
+      total=copies*1999;
+      cout<<"\ntotal cost is :"<<total;
+    }
+    else
+    {
+      cout<<"\nOut of stock";
+      cout<<"\nOnly 3 copies are available";
+    }
+    goto Label; 
+    break;
+  }
+  case 4:
+  {
+    cout<<"\nIt is Available";
+    cout<<"\nPublisher is For_Dummies";
+    cout<<"\nFor 1 copy the price is :2099 Rs only";
+    cout<<"\nEnter number of copies\n";
+    cin>>copies;
+    if(copies<=stock4)
+    {
+      total=copies*2099;
+      cout<<"\ntotal cost is :"<<total;
+    }
+    else
+    {
+      cout<<"\nOut of stock";
+      cout<<"\nOnly 5 copies are available";
+    }
+    goto Label; 
+    break;
+  }
+  case 5:
+  {
+    cout<<"\nIt is Available";
+    cout<<"\nPublisher is McGraw Hill Education ";
+    cout<<"\nFor 1 copy the price is :2499 Rs only";
+    cout<<"\nEnter number of copies\n";
+    cin>>copies;
+    if(copies<=stock5)
+    {
+      total=copies*2499;
+      cout<<"\ntotal cost is :"<<total;
+    }
+    else
+    {
+      cout<<"\nOut of stock";
+      cout<<"\nOnly 5 copies are available";
+    }
+    goto Label; 
+    break;
+  }
+  default:
+  {
+    cout<<"Sorry, Book is not available";
+    cout<<"\nPlease choose from the list";
+    break;
+  }
+  break;
+  }
+  Label:cout<<"\n\nThanks for shopping!!! Visit again :)"<<endl;
+
+  return 0;
+}
