@@ -1,0 +1,29 @@
+/*
+    Objective: To read user inputed 10 integers and prints the first and the last on one line the second and the 9th on the next line the 3rd and the 7th on the next line and so forth.
+    Author: Sandhya V
+    Created On: October 02, 2021
+    Modified On:
+    Dependencies:
+*/
+//the preprocessor segment including the required files during the compilation
+#include <iostream>
+//additional namespaces requiured
+using namespace std;
+//Main Driving code
+int main() 
+{
+cout<<"\nPlease enter 10 numbers: ";
+//user instructions for input
+ int numbers[10],i,count=0; 
+ for(i=0;i<10;i++) //i is the looping variable which loops from 0 to 9
+ {
+  cin >> numbers[i];//to take input array from user
+ }
+ //to print the user entered array in specific order
+ cout<<numbers[0]<<"\t\t"<<numbers[9]<<endl;
+ cout<<numbers[1]<<"\t\t"<<numbers[8]<<endl;
+ cout<<numbers[2]<<"\t\t"<<numbers[7]<<endl;
+ cout<<numbers[3]<<"\t\t"<<numbers[6]<<endl;
+ cout<<numbers[4]<<"\t\t"<<numbers[5]<<endl;
+return 0;
+}
