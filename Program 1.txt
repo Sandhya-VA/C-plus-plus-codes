@@ -1,0 +1,35 @@
+/*
+    Objective: To read a character, an integer, and a floating point number and print each on a separate line.
+
+    Author: Sandhya V
+    Created On: October 01, 2021
+    Modified On:
+    Dependencies:
+*/
+//the preprocessor segment including the required files during the compilation
+#include <iostream>
+//additional namespaces requiured
+using namespace std;
+//Main Driving code
+int main() 
+{
+  //user instructions for input
+  char character;//the type is char, with size of 1
+  int Integer;//The size of the int type is 4 bytes
+  float float_pointnumber;//The size of the int type is 4 bytes
+  cout<<"Enter a character: "<<endl;
+  cin>>character;
+  // prints user inputed character
+  cout<<"Entered character is  "<<character<<endl;
+  cout<<"\n";
+  cout<<"Enter a Integer: "<<endl;
+  cin>>Integer;
+  // prints user inputed integer
+  cout<<"Entered integer is "<<Integer<<endl;
+  cout<<"\n";
+  cout<<"Enter a floating point number: "<<endl;
+  cin>>float_pointnumber;
+  // prints user inputed floating point number
+  cout<<"Entered floating point number is  "<<float_pointnumber<<endl;
+  return 0;
+}
