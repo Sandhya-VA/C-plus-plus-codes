@@ -1,0 +1,106 @@
+/*
+  Objective: Create two sets of classes where the first class object allows you to store the value of distance in meters and centimetres. And the second class object stores the distance in feet and inches. Design a program in such a way so that it can read values of both the class objects and add objects of first with the second. And the final output displayed should be in the feet and inches OR metres and centimetres.
+  Author: Sandhya V
+  Created On: 05/10/21
+  Modified On:
+  Dependencies:None
+*/
+//the preprocessor segment including the required files during the compilation
+#include <iostream>
+//additional namespaces required
+using namespace std;
+class First;//prototyping 
+ 
+class Second
+{
+  //variable declaration by the user
+    int meter;
+    double centimeter;
+    public:
+        void accept()
+        {
+            cout<<"Enter distance/length in meter: "<<endl;
+            cin>>meter;
+            cout<<"Enter distance/length in centimeter: ";
+            cin>>meter;
+        }
+        void display()
+        {
+            cout<<"\nDistance = "<<meter<<" m & "<<centimeter<<" cm\n";
+        }
+         
+        int getmeter()
+        {
+            return meter;
+        }
+        double getcentimeter()
+        {
+            return centimeter;
+        }
+        //friend function
+        friend Second add(Second,First);
+};
+ 
+class First
+{
+    int feet;
+    double inches;
+    public:
+        First()
+        {
+            feet = inches =0;
+        }
+        First(Second d2)
+        {
+            float xin;
+            xin = (d2.getmeter()*100 + d2.getcentimeter())*0.394;
+            feet = xin/12;
+            inches = xin - (feet*12);
+        }
+        void accept()
+        {
+            cout<<"Enter distance in feet: ";
+            cin>>feet;
+            cout<<"Enter distance in inches: ";
+            cin>>inches;
+        }
+        void display()
+        {
+            cout<<"\nDistance = "<<feet<<" ft & "<<inches<<" inches\n";
+        }
+        friend Second add(Second,First);
+};
+ 
+Second add(Second mc,First fi)
+{
+    Second a;
+     
+    float cm,inches,xcm,xin;
+    cm = mc.meter*100 + mc.centimeter;
+    inches = fi.feet*12 + fi.inches;
+     
+    xcm = cm + inches*2.54;
+    xin = inches + cm*0.394;
+     
+    a.meter = xcm/100;
+    a.centimeter = xcm - (a.meter*100);
+     
+    return a;
+     
+}
+ 
+int main()
+{
+    Second a;
+    First b;
+    a.accept();
+    b.accept();
+    cout<<"After adding : ";
+    Second c;
+    First d;
+    c = add(a,b);
+    d = add(a,b);
+    c.display();
+    d.display();
+    return 0;
+}
