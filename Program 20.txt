@@ -1,0 +1,44 @@
+/* Objective: To implement prefix postfix operator overloading concept
+Author: Sandhya V
+Created on:06/10/21
+*/
+//preprocess directives
+#include <iostream>
+//additional namespaces
+using namespace std;
+//class creation
+class num
+{
+  int x;
+  public:
+  num()
+  {
+    x=1;
+  }
+  void operator++()//function with no parameter
+  {
+    cout<<"\n\nNo parameter\n";
+    x=x+1;
+  }
+  void operator++(int a)//function with 1 parameter
+  {
+    cout<<"\n\n1 parameter is passed"<<endl;
+    x=x+2;
+  }
+  void print(){
+    cout<<"Value of x: "<<x;
+  }
+};
+//Main driver code
+int main() 
+{
+  num n;//object creation for class num
+  n.print();
+  //fuctional call of no parameter
+  ++n;
+  n.print();
+  //fuctional call of one parameter
+  n++;
+  n.print();
+  return 0;
+}
