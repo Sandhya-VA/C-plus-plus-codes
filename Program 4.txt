@@ -1,5 +1,5 @@
 /*
-    Objective: To read user inputed 10 integers and prints the first and the last on one line the second and the 9th on the next line the 3rd and the 7th on the next line and so forth.
+    Objective: To generate a particular bill for the customer based on the quantity of items purchased. The items are TV, VCR, CD Player, Remote Controller, Tape Recorder.
     Author: Sandhya V
     Created On: October 02, 2021
     Modified On:
